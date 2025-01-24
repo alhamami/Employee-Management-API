@@ -12,7 +12,7 @@ import java.util.List;
 @RestController
 public class DepartmentController {
 
-    private static final Logger logger = LoggerFactory.getLogger(EmployeeController.class);
+    private static final Logger logger = LoggerFactory.getLogger(DepartmentController.class);
 
     private static final List<String> DEPARTMENTS = List.of("Administrative", "Marketing", "IT", "Finance", "Purchasing", "Legal");
 
