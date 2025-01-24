@@ -19,7 +19,7 @@ public class DepartmentController {
     @GetMapping("/department")
     public ResponseEntity<Boolean> validateDepartment(@RequestParam String department) {
 
-        logger.info("Validate Department received with department: " + department);
+        logger.info("DepartmentController: Validate Department received with department: " + department);
 
         boolean isValidDepartment = DEPARTMENTS.contains(department);
         logger.info("Department validated" );
