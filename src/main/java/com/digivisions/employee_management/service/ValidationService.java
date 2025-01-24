@@ -11,7 +11,7 @@ import org.springframework.web.reactive.function.client.WebClient;
 @Service
 public class ValidationService {
 
-    private static final Logger logger = LoggerFactory.getLogger(EmployeeController.class);
+    private static final Logger logger = LoggerFactory.getLogger(ValidationService.class);
 
 
     private final WebClient emailWebClient;
