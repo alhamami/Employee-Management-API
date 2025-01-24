@@ -64,10 +64,12 @@ public class EmployeeController {
             logger.info("Employee successfully created: "+ employeeResponseDTO);
             return new ResponseEntity<>(employeeResponseDTO, HttpStatus.CREATED);
 
-        } catch (InvalidInputException e) {
+        } catch (InvalidInputException exception) {
 
             logger.error("Invalid input can't create employee: "+ employeeDTO);
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(null);
+        }catch (RuntimeException exception) {
+            return ResponseEntity.status(HttpStatus.TOO_MANY_REQUESTS).body(null);
         }
 
     }
