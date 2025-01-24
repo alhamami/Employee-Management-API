@@ -5,6 +5,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.reactive.function.client.WebClient;
 
@@ -13,6 +14,8 @@ public class ValidationService {
 
     private static final Logger logger = LoggerFactory.getLogger(ValidationService.class);
 
+    @Autowired
+    private RateLimitingService rateLimitingService;
 
     private final WebClient emailWebClient;
     private final WebClient departmentWebClient;
@@ -26,6 +29,11 @@ public class ValidationService {
     public boolean validateEmail(String email) {
 
         logger.info("ValidationService: validating email");
+
+        if (rateLimitingService.Consume() == false) {
+            logger.warn("Rate limit exceeded for validate email call");
+            throw new RuntimeException("Rate limit exceeded, please try again");
+        }
 
         String response = emailWebClient.get()
                 .uri(uriBuilder -> uriBuilder.path("/check").queryParam("access_key", apiKey)
@@ -56,6 +64,11 @@ public class ValidationService {
     public boolean validateDepartment(String department) {
 
         logger.info("ValidationService: validating department");
+
+        if (rateLimitingService.Consume() == false) {
+            logger.warn("Rate limit exceeded for validate department call");
+            throw new RuntimeException("Rate limit exceeded, please try again");
+        }
 
         try {
 
