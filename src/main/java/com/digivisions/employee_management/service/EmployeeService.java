@@ -67,6 +67,8 @@ public class EmployeeService {
     public EmployeeResponseDTO createEmployee(EmployeeDTO employeeDTO) {
 
         logger.info("EmployeeService: Creating new employee");
+        logger.info("Starting employee creation process");
+
 
         try {
 
@@ -86,8 +88,10 @@ public class EmployeeService {
 
             Employee employee = employeeMapper.convertToEmployee(employeeDTO);
             Employee createdEmployee = employeeRepo.save(employee);
+            logger.info("Employee created with id: "+ createdEmployee.getId());
 
-            logger.info("Employee created successfully: "+ createdEmployee.getId());
+            logger.info("Employee creation process completed successfully");
+            logger.info("Employee with id "+createdEmployee.getId()+"has been created");
 
 
             emailService.sendEmail(createdEmployee.getEmail(),createdEmployee.getFirstName());
