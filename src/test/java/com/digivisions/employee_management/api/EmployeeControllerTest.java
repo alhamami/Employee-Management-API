@@ -1,28 +1,20 @@
-package com.digivisions.employee_management.controller;
-
+package com.digivisions.employee_management.api;
 
 import com.digivisions.employee_management.DTO.EmployeeDTO;
 import com.digivisions.employee_management.DTO.EmployeeResponseDTO;
-import com.digivisions.employee_management.entity.Employee;
 import com.digivisions.employee_management.exception.EmployeeNotFoundException;
 import com.digivisions.employee_management.exception.InvalidInputException;
 import com.digivisions.employee_management.service.EmployeeService;
-import org.aspectj.lang.annotation.Before;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 import org.springframework.http.ResponseEntity;
-
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
-import java.util.Optional;
-
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
-import static org.mockito.ArgumentMatchers.anyLong;
 import static org.mockito.Mockito.*;
 
 public class EmployeeControllerTest {

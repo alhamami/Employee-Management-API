@@ -1,5 +1,9 @@
-package com.digivisions.employee_management.DTO;
+package com.digivisions.employee_management.entity;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
 import jakarta.validation.constraints.DecimalMin;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
@@ -7,7 +11,12 @@ import jakarta.validation.constraints.NotNull;
 import java.math.BigDecimal;
 
 
-public class EmployeeDTO {
+@Entity
+public class Employee {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Long id;
 
     @NotBlank(message = "First Name is mandatory field")
     private String firstName;
@@ -26,6 +35,14 @@ public class EmployeeDTO {
     @DecimalMin(value = "0.0", inclusive = false, message = "The Salary value must be greater than zero")
     private BigDecimal salary;
 
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
 
     public String getFirstName() {
         return firstName;
