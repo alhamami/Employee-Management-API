@@ -26,12 +26,12 @@ public class EmployeeService {
     @Autowired
     private EmailService emailService;
 
-    private static final Logger logger = LoggerFactory.getLogger(EmployeeController.class);
+    private static final Logger logger = LoggerFactory.getLogger(EmployeeService.class);
 
 
     public List<EmployeeResponseDTO> getAllEmployees() {
 
-        logger.info("EmployeeService: retrieving all employees");
+        logger.info("EmailService: retrieving all employees");
 
         List<Employee> employees = employeeRepo.findAll();
         List<EmployeeResponseDTO> employeeResponseDTO = employees.stream().map(employeeMapper::convertToDTO).toList();
