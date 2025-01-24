@@ -28,7 +28,7 @@ public class EmployeeController {
     @GetMapping
     public ResponseEntity<List<EmployeeResponseDTO>> listAllEmployees() {
 
-        logger.info("List All Employees received");
+        logger.info("EmployeeController: List All Employees received");
         List<EmployeeResponseDTO> employees = employeeService.getAllEmployees();
 
         logger.info("Employees successfully retrieved: "+ employees);
@@ -38,7 +38,7 @@ public class EmployeeController {
     @GetMapping("/{id}")
     public ResponseEntity<EmployeeResponseDTO> getEmployeeById(@PathVariable Long id) {
 
-        logger.info("Get Employee By Id received to get Employee with ID: "+ id);
+        logger.info("EmployeeController: Get Employee By Id received to get Employee with ID: "+ id);
 
         EmployeeResponseDTO employeeResponseDTO = employeeService.getEmployeeById(id);
         if (employeeResponseDTO != null) {
@@ -56,9 +56,7 @@ public class EmployeeController {
     @PostMapping
     public ResponseEntity<EmployeeResponseDTO> createEmployee(@Validated @RequestBody EmployeeDTO employeeDTO) {
 
-        logger.info("Create Employee received: "+ employeeDTO);
-
-
+        logger.info("EmployeeController: Create Employee received: "+ employeeDTO);
         try {
 
             EmployeeResponseDTO employeeResponseDTO = employeeService.createEmployee(employeeDTO);
@@ -77,7 +75,7 @@ public class EmployeeController {
     @PutMapping("/{id}")
     public ResponseEntity<EmployeeResponseDTO> updateEmployee(@PathVariable Long id, @Validated @RequestBody EmployeeDTO employeeDTO) {
 
-        logger.info("Update Employee received: "+ employeeDTO+" with id: "+ id);
+        logger.info("EmployeeController: Update Employee received: "+ employeeDTO+" with id: "+ id);
         EmployeeResponseDTO  updatedEmployeeResponseDTO = employeeService.updateEmployee(id, employeeDTO);
 
         logger.info("Employee successfully updated: "+ updatedEmployeeResponseDTO);
@@ -88,7 +86,7 @@ public class EmployeeController {
     @DeleteMapping("/{id}")
     public ResponseEntity<Void> deleteEmployee(@PathVariable Long id) {
 
-        logger.info("Delete Employee with id "+id+" received");
+        logger.info("EmployeeController: Delete Employee with id "+id+" received");
 
         try {
             employeeService.deleteEmployee(id);
