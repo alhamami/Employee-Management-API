@@ -17,11 +17,18 @@ public class EmailService {
 
     private static final Logger logger = LoggerFactory.getLogger(EmailService.class);
 
+    @Autowired
+    private RateLimitingService rateLimitingService;
 
     @Async
     public void sendEmail(String email, String name) {
 
         logger.info("EmailService: sending email to "+email);
+
+        if (rateLimitingService.Consume() == false) {
+            logger.warn("Rate limit exceeded for email call");
+            throw new RuntimeException("Rate limit exceeded, please try again");
+        }
 
         String subject = "Welcome to our company";
         String body = "Congratulations "+name+"! You’re now a fully-fledged employee. We hope you’re excited about joining us.";
