@@ -1,6 +1,6 @@
 # **Employee Management System**
 
-A **Spring Boot** application to manage employees, including features such as CRUD operations rate limiting, and audit logging.
+A **Spring Boot** application to manage employees, including features such as CRUD operations and rate limiting and audit logging.
 
 ---
 
