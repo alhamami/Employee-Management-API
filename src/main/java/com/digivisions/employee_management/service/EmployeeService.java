@@ -2,7 +2,6 @@ package com.digivisions.employee_management.service;
 
 import com.digivisions.employee_management.DTO.EmployeeDTO;
 import com.digivisions.employee_management.DTO.EmployeeResponseDTO;
-import com.digivisions.employee_management.api.EmployeeController;
 import com.digivisions.employee_management.entity.Employee;
 import com.digivisions.employee_management.exception.EmployeeNotFoundException;
 import com.digivisions.employee_management.exception.InvalidInputException;
