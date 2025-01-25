@@ -46,13 +46,11 @@ public class ValidationService {
             JsonNode rootNode = objectMapper.readTree(response);
 
             boolean isValidFormat = rootNode.path("format_valid").asText().equalsIgnoreCase("true");
-            boolean isValidSmtp = rootNode.path("smtp_check").asText().equalsIgnoreCase("true");
 
             logger.info("Email Format validation status: "+isValidFormat);
-            logger.info("Email Smtp validation status: "+isValidSmtp);
 
             logger.info("Email has been validated");
-            return isValidFormat && isValidSmtp;
+            return isValidFormat;
 
         } catch (Exception exception) {
             logger.error("Error while validating email and the error message: "+ exception.getMessage());
