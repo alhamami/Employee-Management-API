@@ -1,6 +1,5 @@
 package com.digivisions.employee_management.service;
 
-import com.digivisions.employee_management.api.EmployeeController;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.slf4j.Logger;
