@@ -1,4 +1,4 @@
-package com.digivisions.employee_management.api;
+package com.digivisions.employee_management.controller;
 
 import com.digivisions.employee_management.DTO.EmployeeDTO;
 import com.digivisions.employee_management.DTO.EmployeeResponseDTO;
