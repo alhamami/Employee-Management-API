@@ -90,7 +90,7 @@ java -jar target/employee-management-1.0.0.jar
 ---
 
 ## **Rate Limiting**
-🔄 Rate Limiting: Limits the number of requests to third-party APIs to prevent
+🔄 Rate Limiting: Limits the number of requests to third-party APIs to prevent overuse.
 
 ---
 
