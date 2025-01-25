@@ -1,9 +1,8 @@
-package com.digivisions.employee_management.api;
+package com.digivisions.employee_management.controller;
 import com.digivisions.employee_management.exception.InvalidInputException;
 import com.digivisions.employee_management.DTO.EmployeeDTO;
 import com.digivisions.employee_management.DTO.EmployeeResponseDTO;
 import com.digivisions.employee_management.exception.EmployeeNotFoundException;
-import com.digivisions.employee_management.service.EmployeeMapper;
 import com.digivisions.employee_management.service.EmployeeService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
