@@ -66,7 +66,8 @@ java -jar target/employee-management-1.0.0.jar
   "firstName": "Jalal",
   "lastName": "Alhamami",
   "email": "jalal@outlook.com",
-  "department": "IT"
+  "department": "IT",
+  "salary": 3453.5
 }
 ```
 
@@ -79,7 +80,8 @@ java -jar target/employee-management-1.0.0.jar
   "firstName": "Jalal",
   "lastName": "Alhamami",
   "email": "jalal@outlook.com",
-  "department": "HR"
+  "department": "HR",
+  "salary": 3453.5
 }
 ```
 
