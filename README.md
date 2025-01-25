@@ -8,7 +8,6 @@ A **Spring Boot** application to manage employees, including features such as CR
 
 - ✅ **CRUD Operations**: Create, read, update, and delete employee records.
 - ⚡ **Rate Limiting**: Limits the number of requests to third-party APIs.
-- 🛡️ **Custom Circuit Breaker**: Protects the system from failing third-party calls.
 - 📜 **Audit Logging**: Tracks and logs key events during employee creation.
 - 🐳 **Dockerized**: Ready-to-run in a containerized environment.
 
