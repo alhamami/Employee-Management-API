@@ -1,0 +1,147 @@
+{
+	"info": {
+		"_postman_id": "35aef9cc-38bc-4f8c-9cc5-2c678aebcc4a",
+		"name": "Employee Management API",
+		"description": "**Employee Management API**\n\nThis collection contains the API endpoints for the Employee Management System built with **Spring Boot**. It includes the following functionalities:\n\n1. **Get All Employees**: Retrieve a list of all employees.\n    \n2. **Get Employee by ID**: Retrieve details of a specific employee using their unique ID.\n    \n3. **Create Employee**: Add a new employee with details such as first name, last name, email, department and salary.\n    \n4. **Update Employee**: Modify an existing employee's information using their unique ID.\n    \n5. **Delete Employee**: Remove an employee from the system using their unique ID.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "26222143"
+	},
+	"item": [
+		{
+			"name": "Get All Employees",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/employees",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"employees"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Employee by ID",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/employees/:id",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"employees",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Employee",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"firstName\": \"Jalal\",\n  \"lastName\": \"Alhamami\",\n  \"email\": \"jalal@outlook.com\",\n  \"department\": \"IT\",\n  \"salary\": 345.3\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/employees",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"employees"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Employee",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"firstName\": \"Jalal\",\n  \"lastName\": \"Alhamami\",\n  \"email\": \"jalal@outlook.com\",\n  \"department\": \"HR\",\n  \"salary\": 2354.55\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/employees/:id",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"employees",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "1",
+							"description": "ID of the employee"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Employee",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/employees/:id",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"employees",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "1",
+							"description": "ID of the employee to delete"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
